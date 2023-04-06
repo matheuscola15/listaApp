@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>
-      Contatos
-    </ion-title>
+    <ion-title>Informações</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>Voltar</ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true" color="dark">
 
-  <ion-card *ngFor="let contato of listaContatos" color="primary">
+  <ion-card *ngIf="contato" color="primary">
     <img [src]="contato.foto">
     <ion-card-header>
       <ion-card-title>Nome: {{ contato.nome }}</ion-card-title>
+      <ion-card-title>Id: {{ contato.id }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button (click)="exibirContato(contato)" color="dark">Ver Mais</ion-button>
+      <ion-card-title>Email: {{ contato.email }}</ion-card-title>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
